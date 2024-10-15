@@ -1887,3 +1887,62 @@ animation: moveRightLeft 1.5s linear infinite;
     color: #666;
     margin-bottom: 5px;
 }
+
+/*Detalle de producto*/
+
+.back{
+    margin:13% 10% 1% 15%;    
+    height:5px;
+    border: none;
+    i{
+        font-size: 50px;
+        color: #666;
+    }
+
+}
+
+.producto{
+    width: auto;
+    height: auto;
+    margin: 5% 5%;
+    display: flex;    
+    gap: 5%;
+    justify-content: center;
+}
+
+.producto-imagen {    
+    width: 550px;
+    height: 550px;   
+    border-radius: 15px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    
+    .img-grande{
+        margin:20px 3% 1% 19%;
+        width: auto;
+        height: 300px;
+        max-width: 80%;        
+        border-radius: 3px;
+    }   
+
+    h1{
+        margin: 10px;
+        font-weight: bold;
+    }
+
+    p{
+        margin: 10px;
+    }
+
+    button{
+        color: white;   
+        font-size: 15px;   
+        font-weight: bold; 
+        background-color: #0F23A4;        
+        height: 10%;
+        width: auto;
+        margin: 15px 30px;
+        padding: 5px 20px;
+        border-radius: 5px;        
+    }
+}
