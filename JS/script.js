@@ -1,3 +1,4 @@
+/*----------------------------------------------------JS PARA EL INDEX----------------------------------------------------*/
 var swiper = new Swiper(".mySwiper-1", {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -34,58 +35,93 @@ var swiper = new Swiper(".mySwiper-2", {
     }
 });
 
-let tabInputs = document.querySelectorAll(".tabInput");
+/*---------------------------CARRITO----------------------------*/
 
-tabInputs.forEach(function(input) {  
-    input.addEventListener('change', function() {
-        let id = input.ariaValueMax;
-        let thisSwiper = document.getElementById('swiper' + id);
-        thisSwiper.swiper.update();
-    })
-});
+const carrito = document.getElementById('carrito');
+const elementos1 = document.getElementById('lista-1');
+const elementos2 = document.getElementById('lista-2');
+const lista = document.querySelector('#lista-carrito tbody');
+const vaciarCarritoBtn = document.getElementById('vaciar-carrito')
 
-function showInfo(sede) {
-    var infoDiv = document.getElementById("info");
-    var mapa = document.getElementById("mapa");
-    var direccion, horario, telefono;
+cargarEventListeners();
 
-    switch (sede) {
-        case 1:
-            direccion = "Dirección: Av. Los Ángeles 602 Urb, Comas 15314";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 123456789";
-            break;
-        case 2:
-            direccion = "Dirección: Av. Alfredo Mendiola 1400, Independencia 15311";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 987654321";
-            break;
-        case 3:
-            direccion = "Dirección: Av. Garcilaso de la Vega 1337, Lima 15001";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 456789123";
-            break;
-        case 4:
-            direccion = "Dirección: Av. Brasil 702, Breña 15083";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 937436628";
-            break;
-        case 5:
-            direccion = "Dirección: Av. de la Marina 2000, San Miguel 15088";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 918726312";
-            break;
-        case 6:
-            direccion = "Dirección: Av. Javier Prado Este 4200, Santiago de Surco 15023";
-            horario = "Horario de atención: Lunes a Domingo, 10:00 a.m. - 10:00 p.m.";
-            telefono = "Teléfono: 900893023";
-            break;
-        default:
-            direccion = "";
-            horario = "";
-            telefono = "";
-            break;
+function cargarEventListeners() {
+    elementos1.addEventListener('click', comprarElemento);
+    elementos2.addEventListener('click', comprarElemento);
+    carrito.addEventListener('click', eliminarElemento);
+
+    vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+}
+
+function comprarElemento(e) {
+    e.preventDefault();
+    if(e.target.classList.contains('agregar-carrito')) {
+        const elemento = e.target.parentElement.parentElement;
+        leerDatosElemento(elemento);
+    }
+}
+
+function leerDatosElemento(elemento) {
+    const infoElemento = {
+        imagen: elemento.querySelector('img').src,
+        titulo: elemento.querySelector('h3').textContent,
+        precio: elemento.querySelector('.precio').textContent,
+        id: elemento.querySelector('a').getAttribute('data-id')
     }
 
-    infoDiv.innerHTML = "<p>" + direccion + "</p><p>" + horario + "</p><p>" + telefono + "</p>";
+    insertarCarrito(infoElemento);
 }
+
+function insertarCarrito(elemento) {
+    const row = document.createElement('tr');
+    row.innerHTML = `
+        <td>
+            <img src="${elemento.imagen}" width=100>
+        </td>
+
+        <td>
+            ${elemento.titulo}
+        </td>
+
+        <td>
+            ${elemento.precio}
+        </td>
+
+        <td>
+            <a href="#" class="borrar" data-id="${elemento.id}">X</a>
+        </td>
+    `;
+
+    lista.appendChild(row);
+}
+
+function eliminarElemento(e) {
+    e.preventDefault();
+    let elemento, 
+        elementoId;
+
+    if(e.target.classList.contains('borrar')) {
+        e.target.parentElement.parentElement.remove();
+        elemento = e.target.parentElement.parentElement;
+        elementoId = elemento.querySelector('a').getAttribute('data-id');
+    }
+}
+
+function vaciarCarrito() {
+    while(lista.firstChild) {
+        lista.removeChild(lista.firstChild);
+    }
+
+    return false;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const categories = document.querySelectorAll('.category');
+
+    categories.forEach(category => {
+        category.addEventListener('click', function() {
+            const selectedCategory = this.getAttribute('data-category');
+            window.location.href = `productos.html?categoria=${selectedCategory}`;
+        });
+    });
+});
