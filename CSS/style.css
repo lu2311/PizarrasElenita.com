@@ -1890,59 +1890,254 @@ animation: moveRightLeft 1.5s linear infinite;
 
 /*Detalle de producto*/
 
-.back{
-    margin:13% 10% 1% 15%;    
-    height:5px;
-    border: none;
-    i{
-        font-size: 50px;
-        color: #666;
+/*Detalle de producto*/
+
+.breadcumbs{
+    margin-top: 10%;
+    margin-left: 13%;
+    padding: 5px;
+    font-size: 19px;
+    a{
+        color:gray;
+    }
+    
+}
+
+.breadcumbs span {    
+    color: #0F23A4;
+    font-weight: bold;
+}
+
+.breadcumbs a:hover {
+    color: #0F23A4;
+    font-weight: bold;
+}
+
+
+.producto-detalle {
+    margin: 60px 20PX;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    a {
+        text-decoration: none;
+        color: #4e4e4e;
     }
 
 }
 
-.producto{
-    width: auto;
-    height: auto;
-    margin: 5% 5%;
-    display: flex;    
-    gap: 5%;
-    justify-content: center;
+.card-det {
+    width: 700px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px lightgrey;
+    background-color: white;
+
+    img {
+        margin: 10px auto;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    h1 {
+        margin: 9px;
+    }
+
+    p {
+        margin: 9px;
+    }
+
+    .btn-xtr {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 20px;
+        margin-left: 20px;
+        background-color: #0F23A4;
+        color: white;
+        border: 1px solid white;
+        border-bottom: 4px solid white;
+        border-radius: 10px;
+        display: flex;
+        margin: 10px auto;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .btn-xtr:hover {
+        color: #0F23A4;
+        border: 1px solid #0F23A4;
+        background-color: white;
+    }
 }
 
-.producto-imagen {    
-    width: 550px;
-    height: 550px;   
-    border-radius: 15px;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
-    padding: 20px;
+
+
+/*Productos adicionales*/
+.text-prod {
+    color: #0F23A4;
+    font-size: 2rem;
+    margin-left: 60px;
+}
+
+.productos-adicionales {
+    margin: 60px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    a {
+        text-decoration: none;
+        color: #4e4e4e;
+    }
+
+}
+
+.card-ad {
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px lightgrey;
+    background-color: white;
+    max-height: 100%;
+    margin: 10px;
+
+    img {
+        margin: 10px auto;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.card-ad:hover {
+    box-shadow: 4px 4px 6px lightgrey;
+}
+
+.card-ad p {
+    text-align: center;
+}
+
+.btn-xtr {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: white;
+    color: #0F23A4;
+    border: 1px solid #0F23A4;
+    border-bottom: 4px solid #0F23A4;
+    border-radius: 30px;
+    display: flex;
+    margin: 10px auto;
+}
+
+.btn-xtr:hover {
+    color: white;
+    border: 1px solid #0F23A4;
+    background-color: #0F23A4;
+}
+
+/*Nosotros*/
+
+.nosotros-info{   
+    width: 100%; 
+    padding: 40px;    
+    background-color: #0F23A4;
+    margin:180px 0px 50px 0px;
+    max-height: 100%;
+    display: flex; 
     
-    .img-grande{
-        margin:20px 3% 1% 19%;
-        width: auto;
-        height: 300px;
-        max-width: 80%;        
-        border-radius: 3px;
-    }   
+    
+      
+    .nosotros-txt{
+        margin: 0 10%;
+        display: flex; 
+        flex-direction: column;
+        float: left;
+    }
 
     h1{
-        margin: 10px;
-        font-weight: bold;
+        color: white;
+        font-size: 40px;
+        padding: 20px;
+        
     }
 
     p{
-        margin: 10px;
+        font-size: 25px;
+        color: white;
+        width: 700px;
+        padding: 20px;      
     }
 
-    button{
-        color: white;   
-        font-size: 15px;   
-        font-weight: bold; 
-        background-color: #0F23A4;        
-        height: 10%;
-        width: auto;
-        margin: 15px 30px;
-        padding: 5px 20px;
-        border-radius: 5px;        
+   
+
+    img{
+        margin: 10px 10px -150px 10px;
+        float: right;
+        width: 30%;        
+        max-width: 100%;
+    }
+}
+
+/*Mision vision*/
+
+.mision-vision {
+    margin: 160px 20PX;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+    a {
+        text-decoration: none;
+        color: #4e4e4e;
+    }
+
+}
+
+.card-det {
+    width: 600px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px lightgrey;
+    background-color: white;
+
+    img {
+        margin: 10px auto;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    h1 {
+        margin: 9px;
+        color: #0F23A4;
+    }
+
+    p {
+        margin: 9px;
+
+    }   
+}
+
+.valores{
+    margin: 60px 60px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    .card-ad{
+    background-color: #F1F1F1;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+}
+
+    p{
+        color: #0F23A4;
+        font-size: 22px;
+        font-weight: bolder;
     }
 }
