@@ -898,3 +898,102 @@ hr {
         font-weight: bolder;
     }
 }
+
+/*----------------------------------------------------------------------ESTILOS CONTACTO--------------------------------------------------------------------------*/
+.banner{
+    width: 100%; 
+    padding: 40px;    
+    background-color: #0F23A4;
+    margin:135px 0px 50px 0px;
+    max-height: 100%;
+    display: flex; 
+    font-size: 23px;
+    justify-content: center;
+    color: white;
+}
+.contacto-form {    
+    margin: 0 auto;
+    max-width: 500px;
+    max-height: 100%;
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
+    flex-direction: column;
+    color: #0F23A4;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+
+.contacto-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.contacto-form input[type="text"],
+.contacto-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px; 
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+
+}
+
+
+.contacto-form input[type="radio"] {
+    width: 20px; 
+    height: 20px;
+    accent-color: #0F23A4; 
+}
+
+.contacto-form .opciones {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    align-items: center;  
+}
+
+.contacto-form input[type="radio"] + label {
+    margin-bottom: 0;
+    display: inline-block;
+    color: black;
+    font-weight: normal;
+    
+}
+
+.opciones {
+    margin-bottom: 20px;
+    justify-content:space-around
+}
+
+
+.contacto-form .txtarea label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+
+.contacto-form .btn-xtr {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #0F23A4;
+    color: white;
+    border: 1px solid white;
+    border-bottom: 4px solid white;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px auto;
+    font-weight: bold;
+    cursor: pointer;    
+}
+
+
+.contacto-form .btn-xtr:hover {
+    color: #0F23A4;
+    border: 1px solid #0F23A4;
+    background-color: white;
+}
+
