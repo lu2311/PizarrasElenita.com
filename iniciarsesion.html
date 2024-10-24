@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicketExpress - Tu entrada al mundo del entretenimiento</title>
+    <link rel="icon" href="images/pizarrita.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+</head>
+
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-bar-content container">
+            <div class="content-info">
+                <p>
+                    La pizarra perfecta para tu necesidad
+                </p>
+            </div>
+            <div class="social-links">
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="btn-social-link">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="menu container">
+            <div class="top-row">
+                <div class="logo-container">
+                    <img class="logo-1" src="images/logo.png" alt="" usemap="#mlogo">
+                    <img class="logo-2" src="images/logo.png" alt="" usemap="#mlogo">
+                    <map name="mlogo">
+                        <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+                    </map>
+                </div>
+            </div>
+
+            <input type="checkbox" id="menu" />
+            <label for="menu">
+                <img src="images/menu.png" class="menu-icono" alt="">" </label>
+            <nav class="navbar">
+                <div class="menu-1">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#">Productos</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="breadcumbs">
+        <a href="index.html">Inicio</a>
+        >
+        <span>Contacto</span>
+    </section>
+
+    <div class="banner">
+        <section class="cuenta">
+            <h1>Ingresar / Crear cuenta</h1>
+        </section>
+    </div>
+
+    <section class="intranet">
+        <div class="intranet-content container">
+            <h2 class="intranet-title">INGRESAR</h2>
+            <form id="login-form" class="intranet-form">
+                <div class="intranet-input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="intranet-input-group">
+                    <label for="password">Contraseña</label>
+                    <input placeholder="¿Olvidó su contraseña?" type="password" id="password" required>
+                </div>
+                <div class="intranet-button-group">
+                    <button type="submit">Ingresar</button>
+                    <button type="button" id="register-btn">Crear cuenta</button>
+                </div>
+            </form>
+            <form id="register-form" class="intranet-form hidden">
+                <div class="intranet-input-group">
+                    <label for="first-name">Nombres</label>
+                    <input type="text" id="first-name" required>
+                </div>
+                <div class="intranet-input-group">
+                    <label for="last-name">Apellidos</label>
+                    <input type="text" id="last-name" required>
+                </div>
+                <div class="intranet-input-group">
+                    <label for="address">DNI</label>
+                    <input type="text" id="address" required>
+                </div>                
+                <div class="intranet-input-group">
+                    <label for="reg-email">Correo electrónico</label>
+                    <input type="email" id="reg-email" required>
+                </div>
+                <div class="intranet-input-group">
+                    <label for="reg-password">Contraseña</label>
+                    <input type="password" id="reg-password" required>
+                </div>
+                <div class="intranet-input-group">
+                    <label for="confirm-password">Confirmar Contraseña</label>
+                    <input type="password" id="confirm-password" required>
+                </div>
+                <div class="intranet-button-group">
+                    <button type="button" id="back-btn">Volver</button>
+                    <button type="submit">Crear</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        document.getElementById('register-btn').addEventListener('click', function () {
+            document.querySelector('.intranet-title').textContent = 'Registrar';
+            document.getElementById('login-form').classList.add('hidden');
+            document.getElementById('register-form').classList.remove('hidden');
+        });
+
+        document.getElementById('back-btn').addEventListener('click', function () {
+            document.querySelector('.intranet-title').textContent = 'Iniciar Sesión';
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        });
+
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const firstName = document.getElementById('first-name').value;
+            const lastName = document.getElementById('last-name').value;
+            const address = document.getElementById('address').value;
+            const district = document.getElementById('district').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+
+            if (password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+
+            const user = {
+                firstName,
+                lastName,
+                address,
+                district,
+                email,
+                password
+            };
+
+            localStorage.setItem(email, JSON.stringify(user));
+            alert('Usuario registrado con éxito');
+
+            // Limpiar los campos del formulario de registro
+            document.getElementById('register-form').reset();
+
+            document.querySelector('.intranet-title').textContent = 'Iniciar Sesión';
+            document.getElementById('register-form').classList.add('hidden');
+            document.getElementById('login-form').classList.remove('hidden');
+        });
+
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const storedUser = localStorage.getItem(email);
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                if (user.password === password) {
+                    alert('Inicio de sesión exitoso');
+                } else {
+                    alert('Contraseña incorrecta');
+                }
+            } else {
+                alert('Usuario no registrado');
+            }
+
+            // Limpiar los campos del formulario de inicio de sesión
+            document.getElementById('login-form').reset();
+        });
+    </script>
+
+    <footer class="footer-container">
+        <div class="footer container">
+            <img class="logo-2" src="images/logo2.png" alt="" usemap="#mlogo">
+            <map name="mlogo">
+                <area alt="Logotipo" title="TicketExpress" shape="rect" coords="0,0,150,60" href="index.html">
+            </map>
+            <div class="links">
+                <h4>PIZARRAS E. BERTHA SAC RUC</h4>
+                <ul>
+                    <li>20605096639</li>
+                </ul>
+                <h4>REPRESENTANTE DE VENTAS</h4>
+                <ul>
+                    <li>Bertha F. Cerda Gómez</li>
+                </ul>
+                <h4>CORREO CORPORATIVO</h4>
+                <ul>
+                    <a href="mailto:ventadepizarraseyb@hotmail.com">
+                        <li>ventadepizarraseyb@hotmail.com</li>
+                    </a>
+                </ul>
+            </div>
+
+            <div class="links">
+                <h4>ESTAMOS AQUÍ</h4>
+                <ul>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.8606035190955!2d-77.02891792412854!3d-12.05311064202062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8ba3f9e2655%3A0xadfbc200631c1447!2sPizarras%20Elenita!5e0!3m2!1ses-419!2spe!4v1728966497292!5m2!1ses-419!2spe"
+                        style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </ul>
+            </div>
+
+            <div class="links">
+                <h4>CONTACTO</h4>
+                <div class="socials">
+                    <a href="mailto:pizarraselenita@hotmail.com">
+                        <div class="social">
+                            <i class="fa-regular fa-envelope"></i>
+                        </div>
+                        <li>pizarraselenita@hotmail.com</li>
+                    </a>
+                    <a href="tel:(01) 4271623">
+                        <div class="social">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <li>(01) 4271623</li>
+                    </a>
+                    <a>
+                        <div class="social">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <li>Hora de cierre 7 p.m.</li>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('menu').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('search-toggle').checked = false;
+            }
+        });
+
+        document.getElementById('search-toggle').addEventListener('change', function () {
+            if (this.checked) {
+                document.getElementById('menu').checked = false;
+            }
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="JS/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Selecciona todos los videos y los pausa
+            var videos = document.querySelectorAll('video');
+            videos.forEach(function (video) {
+                video.pause();
+            });
+        });
+    </script>
+</body>
+
+</html>
