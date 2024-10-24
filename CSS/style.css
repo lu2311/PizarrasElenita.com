@@ -997,3 +997,94 @@ hr {
     background-color: white;
 }
 
+/*----------------------------------------------------------------------ESTILOS DE LOGIN--------------------------------------------------------------------------*/
+.banner-login{
+    width: 100%; 
+    padding: 15px;    
+    background-color: #0F23A4;
+    margin:20px 0px;
+    max-height: 100%;
+    display: flex; 
+    font-size: 23px;
+    justify-content: center;
+    color: white;
+}
+
+.login {
+    
+    padding-bottom: 100px;    
+}
+
+.login-content{
+    max-width: 400px;
+    width: 100%;    
+    padding: 30px;
+    border-radius: 10px;    
+    text-align: center;
+    color: #0F23A4; 
+    margin: auto;
+    margin-top: 50px;
+    
+}
+
+.login-title{
+    margin-bottom: 7px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-input-group {
+    text-align: left;
+}
+
+.login-input-group label {
+    display: block;    
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.login-input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;   
+    font-size: 16px;
+}
+
+.login-button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.login-button-group button {
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    background-color: #0F23A4;
+    color: white;
+    border: 1px solid white;
+    border-bottom: 4px solid white;
+    border-radius: 10px;
+    display: flex;
+    margin: 10px auto;
+    font-weight: bold;
+    cursor: pointer;    
+}
+
+
+.login-button-group button:hover {
+    color: #0F23A4;
+    border: 1px solid #0F23A4;
+    background-color: white;
+}
+
+.hidden {
+    display:none;
+}
+
+
